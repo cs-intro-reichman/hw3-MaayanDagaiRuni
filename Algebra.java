@@ -94,37 +94,33 @@ public class Algebra {
 		return power;
 	}
 
-	// Returns the integer part of x1 / x2 
-	public static int div(int x1, int x2) {
+  // Returns the integer part of x1 / x2
+
+    public static int div(int x1, int x2) {
 		if (x2 == 0) return 0;
-		int count = 0;
-
-		if (x1 >= 0) {
-			if (x2 > 0) {
-				for (count = 0; times(count, x2) <= x1; count++) { 
-
-				}
-				return minus(count, 1);
-			} else {
-				for (count = 0; times(count, x2) <= x1; count--) { 
-
-				}
-				return plus(count, 1);
-			}
-		} else {
-			if (x2 > 0) {
-				for (count = 0; times(count, x2) >= x1; count--) { 
-
-				}
-				return plus(count, 1);
-			} else {
-				for (count = 0; times(count, x2) >= x1; count++) { 
-
-				}
-				return minus(count, 1);
-			}
+        int count = 0;
+		if (x2 < 0) {
+			x1 = minus(0, x1);
+			x2 = minus(0, x2);
 		}
-	}
+
+        if (x1>0){
+            for ( count =0 ; times(count, x2)<=x1 ;count ++){
+
+            }
+
+        }
+
+        if(x1<0){
+            for ( count =0 ; times(count, x2)>=x1 ;count --){
+
+            }
+
+        }
+
+        return minus(count, 1);
+
+    }
 
 	// Returns x1 % x2
 	public static int mod(int x1, int x2) {
