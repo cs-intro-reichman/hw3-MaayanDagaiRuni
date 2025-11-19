@@ -126,10 +126,8 @@ public class Algebra {
 	public static int mod(int x1, int x2) {
 		int i;
 		for(i=0;times(x2, i)<= x1; i++){
-
 		}
-
-			return (minus(x1, (times(x2, (minus(i, 1))))));
+		return (minus(x1, (times(x2, (minus(i, 1))))));
 	}	
 
 	// Returns the integer part of sqrt(x) 
