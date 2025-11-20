@@ -30,6 +30,8 @@ public class Anagram {
 	public static boolean isAnagram(String str1, String str2) {
 		String processed1 = preProcess(str1);
 		String processed2 = preProcess(str2);
+		if (processed1.length() == 0 && processed2.length() == 0) return true;
+
 		String matches = ",";
 		if (processed1.length() != processed2.length()){
 			return false;
@@ -75,10 +77,10 @@ public class Anagram {
 	// characters as the given string, re-arranged in a random order. 
 	public static String randomAnagram(String str) {
 		String newstr = "";
-		for(int i = 0 ;i<str.length(); i++){
+		for(int i = 0 ;i<str.length() + newstr.length(); i++){
 		int randomIndex = (int)(Math.random() * str.length());
 		newstr += str.charAt(randomIndex);
-	str = str.substring(0, randomIndex) + str.substring(randomIndex + 1);
+		str = str.substring(0, randomIndex) + str.substring(randomIndex + 1);
 	}
 		return newstr;
 	}
