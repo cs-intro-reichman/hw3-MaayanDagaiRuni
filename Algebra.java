@@ -68,13 +68,14 @@ public class Algebra {
 	public static int times(int x1, int x2) {
 
 		int mutli= 0;
+
 		if(x2>0){
 			for (int i = 0 ; x2>i ;i++){
 				mutli = plus(mutli, x1);
 			}
 		}
 		else{
-			for (int i = 0 ; minus(0, x2)>i ;i++){
+			for (int i = 0 ; i < minus(0, x2) ;i++){
 			mutli = minus(mutli, x1);
 			}
 		
@@ -98,27 +99,37 @@ public class Algebra {
 
     public static int div(int x1, int x2) {
 		if (x2 == 0) return 0;
+
         int count = 0;
-		if (x2 < 0) {
+		if (x1 <0 && x2 < 0) {
 			x1 = minus(0, x1);
 			x2 = minus(0, x2);
 		}
 
-        if (x1>0){
-            for ( count =0 ; times(count, x2)<=x1 ;count ++){
+        if (x1>0 && x2<0){
+			x2 = minus(0, x2);
+			x1 = minus(0, x1);
+            for ( count =0 ; times(count + 1, x2)<=x1 ;count ++){
 
             }
+			count = minus(0, count);
+			return count;
 
         }
 
-        if(x1<0){
-            for ( count =0 ; times(count, x2)>=x1 ;count ++){
-
-            }
+        if(x1<0 && x2>0){
+			x1 = minus(0, x1);
+            for ( count =0 ; times(count+1, x2)<=x1 ;count ++){
+				
+			}
+			count = minus(0, count); 
+			return count;
+            
 
         }
+    	for (count = 0; times(count + 1, x2) <= x1; count++) { }
 
-        return minus(count, 1);
+        return count;
 
     }
 
