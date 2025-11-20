@@ -65,12 +65,12 @@ public class LoanCalc {
 	double L = 0;
 	double H = loan * Math.pow(1 + rate/100, n);
 	iterationCounter = 0;
+
 	while(H-L > epsilon){
 		double g = (L + H) / 2;
 		double balanceG = endBalance(loan, rate, n, g);
-		double balanceL = endBalance(loan, rate, n, L);
 
-		if(balanceG*balanceL> 0 ){
+		if(balanceG > 0 ){
 			L = g;
 		}
 		else{
