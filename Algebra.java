@@ -57,7 +57,7 @@ public class Algebra {
 		else {
 			while (x2<0) {
 			sum ++;
-			x2 --;	
+			x2 ++;	
 			}
 		
 		}
@@ -70,7 +70,7 @@ public class Algebra {
 		int mutli= 0;
 
 		if(x2>0){
-			for (int i = 0 ; x2>i ;i++){
+			for (int i = 0 ; i < x2 ;i++){
 				mutli = plus(mutli, x1);
 			}
 		}
@@ -120,7 +120,7 @@ public class Algebra {
         if(x1<0 && x2>0){
 			x1 = minus(0, x1);
             for ( count =0 ; times(count+1, x2)<=x1 ;count ++){
-				
+
 			}
 			count = minus(0, count); 
 			return count;
@@ -136,6 +136,13 @@ public class Algebra {
 	// Returns x1 % x2
 	public static int mod(int x1, int x2) {
 		int i;
+		if(x1 < 0){
+			return minus(0, mod(minus(0, x1), x2));
+		} 
+		if(x2 < 0){
+		x2 = minus(0, x2);
+		}
+
 		for(i=0;times(x2, i)<= x1; i++){
 		}
 		return (minus(x1, (times(x2, (minus(i, 1))))));
