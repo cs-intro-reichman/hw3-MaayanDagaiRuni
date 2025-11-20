@@ -74,7 +74,7 @@ public class Algebra {
 			}
 		}
 		else{
-			for (int i = 0 ; x2<i ;i--){
+			for (int i = 0 ; minus(0, x2)>i ;i++){
 			mutli = minus(mutli, x1);
 			}
 		
@@ -112,7 +112,7 @@ public class Algebra {
         }
 
         if(x1<0){
-            for ( count =0 ; times(count, x2)>=x1 ;count --){
+            for ( count =0 ; times(count, x2)>=x1 ;count ++){
 
             }
 
